@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Food search</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+    <script src="app.js" async defer></script>
+  </head>
+  <body>
+    <!-- Food search -->
+    <div class="food-search">
+      <div class="inputs">
+        <div class="food-input-flex">
+          <label for="food-input">Enter food</label>
+          <input
+            type="text"
+            name="food-input"
+            class="food-input"
+            id="food-input"
+            required
+          />
+        </div>
+        <div class="food-input-flex">
+          <label for="grams-input">Enter grams</label>
+          <input
+            type="number"
+            min="0"
+            name="grams-input"
+            class="grams-input"
+            id="grams-input"
+            oninput="this.value = Math.abs(this.value)"
+            required
+          />
+        </div>
+      </div>
+
+      <button class="btn btn-black btn-search">Search</button>
+      <button class="btn btn-black btn-reset">Reset</button>
+      <div id="edamam-badge" data-color="white"></div>
+    </div>
+
+    <!-- Flex container for the food cards -->
+    <div class="food-cards-flex"></div>
+
+    <!-- Modal content -->
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-body">
+          <span class="close">&times;</span>
+          <p class="modal-text"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
